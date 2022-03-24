@@ -1,0 +1,14 @@
+{
+  "short_name": "GitHub App",
+  "name": "GitHub Finder App",
+  "icons": [
+    {
+      "src": "icons/gabriel.ico",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
