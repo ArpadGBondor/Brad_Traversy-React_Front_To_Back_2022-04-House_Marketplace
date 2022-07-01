@@ -23,8 +23,8 @@
 
 ## Mayor changes:
 
-    -   Create Listing: I made `/create-listing` a Private Route that only can accessed when the user is logged in, to simplify the code.
-    -   Geocoding: I'm using Positionstack's free tier instead of google billing. Added Netlify serverless function backend to hide the geocoding API key.
+-   Create Listing: I made `/create-listing` a Private Route that only can accessed when the user is logged in, to simplify the code.
+-   Geocoding: I'm using Positionstack's free tier instead of google billing. Added Netlify serverless function backend to hide the geocoding API key.
 
 ## Environment variables:
 
