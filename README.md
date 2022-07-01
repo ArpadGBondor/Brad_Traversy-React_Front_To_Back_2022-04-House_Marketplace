@@ -9,17 +9,35 @@
 
 ## Deployed
 
--   Not yet.
+-   Not yet. (Will be on Netlify)
 
 ## Used Tools:
 
--   Frontend: React.js
+-   Frontend:
+    -   React.js
+-   Backend:
+    -   Firebase - authentication
+    -   Firestore - database
+    -   Netlify - serverless functions & hosting
+    -   Positionstack - geocoding
 
 ## Mayor changes:
 
+    -   Create Listing: I made `/create-listing` a Private Route that only can accessed when the user is logged in, to simplify the code.
+    -   Geocoding: I'm using Positionstack's free tier instead of google billing. Added Netlify serverless function backend to hide the geocoding API key.
+
 ## Environment variables:
 
--   `./src/firebase.config.js` file is excluded from the project until I figure out a safe way to handle the secrets.
+-   App's firebase configuration: (these variables will be visible in the fronend project)
+    -   REACT_APP_FIREBASE_CONFIG_API_KEY
+    -   REACT_APP_FIREBASE_CONFIG_AUTH_DOMAIN
+    -   REACT_APP_FIREBASE_CONFIG_PROJECT_ID
+    -   REACT_APP_FIREBASE_CONFIG_STORAGE_BUCKET
+    -   REACT_APP_FIREBASE_CONFIG_MESSAGING_SENDER_ID
+    -   REACT_APP_FIREBASE_CONFIG_APP_ID
+-   App's positionstack configuration: (these variables are hidden in a serverless backend function)
+    -   POSITIONSTACK_API_KEY
+    -   POSITIONSTACK_BASE_URL
 
 ## Resources:
 
