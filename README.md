@@ -25,6 +25,33 @@
 
 -   Create Listing: I made `/create-listing` a Private Route that only can accessed when the user is logged in, to simplify the code.
 -   Geocoding: I'm using Positionstack's free tier instead of google billing. Added Netlify serverless function backend to hide the geocoding API key.
+-   Deleting Listings: Uploaded images also need to be deleted.
+    -   Changed Storage rules, to only allow owners to delete files:
+    ````
+        rules_version = '2';
+        service firebase.storage {
+            match /b/{bucket}/o {
+                match /images/{fileName} {
+                    allow read;
+                    allow write: if
+                    request.auth != null &&
+                    (
+                        (
+                        request.method == "create" &&
+                        request.resource.size < 2 * 1024 * 1024 && //2MB
+                        request.resource.contentType.matches('image/.*')
+                        )
+                        ||
+                        (
+                        request.method == "delete" &&
+                        fileName.matches(request.auth.uid+'-.*')
+                        )
+                    );
+                }
+            }
+        }
+        ```
+    ````
 
 ## Environment variables:
 

@@ -12,6 +12,7 @@ import Spinner from '../components/Spinner';
 
 function CreateListing() {
     const auth = getAuth();
+    // eslint-disable-next-line no-unused-vars
     const [geolocationEnabled, setGeolocationEnabled] = useState(true);
     const [formData, setFormData] = useState({
         type: 'rent',
@@ -43,7 +44,6 @@ function CreateListing() {
         images,
         latitude,
         longitude,
-        userRef,
     } = formData;
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -140,6 +140,9 @@ function CreateListing() {
             geolocation,
             timestamp: serverTimestamp(),
         };
+        delete formDataCopy.images;
+        delete formDataCopy.latitude;
+        delete formDataCopy.longitude;
         delete formDataCopy.images;
         !offer && delete formDataCopy.discountedPrice;
 

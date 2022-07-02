@@ -105,6 +105,10 @@ button {
         margin-bottom: calc(3rem + 85px);
     }
 }
+.pageContainer.no-margin {
+    margin: 0;
+    margin-bottom: 85px;
+}
 
 .loadingSpinnerContainer {
     position: fixed;
