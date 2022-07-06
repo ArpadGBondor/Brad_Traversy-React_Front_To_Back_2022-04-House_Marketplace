@@ -16,7 +16,7 @@ function Listing() {
     const params = useParams();
     const navigate = useNavigate();
     const auth = getAuth();
-    const { categoryName, listingId } = params;
+    const { listingId } = params;
 
     useEffect(() => {
         const fetchListing = async () => {

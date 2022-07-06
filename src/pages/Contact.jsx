@@ -9,6 +9,7 @@ function Contact() {
     const [message, setMessage] = useState('');
     const [landlord, setLandlord] = useState('');
     const [loading, setLoading] = useState(true);
+    // eslint-disable-next-line no-unused-vars
     const [searchParams, setSearchParams] = useSearchParams();
     const params = useParams();
 

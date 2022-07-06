@@ -27,7 +27,7 @@
 -   Geocoding: I'm using Positionstack's free tier instead of google billing. Added Netlify serverless function backend to hide the geocoding API key.
 -   Deleting Listings: Uploaded images also need to be deleted.
     -   Changed Storage rules, to only allow owners to delete files:
-    ````
+    ```
         rules_version = '2';
         service firebase.storage {
             match /b/{bucket}/o {
@@ -50,8 +50,8 @@
                 }
             }
         }
-        ```
-    ````
+    ```
+-   Edit Listing: I added a new boolean option, so the users can choose if they want to keep the old images, or upload new ones. The old images are getting deleted from storage, if the user uploads new ones.
 
 ## Environment variables:
 

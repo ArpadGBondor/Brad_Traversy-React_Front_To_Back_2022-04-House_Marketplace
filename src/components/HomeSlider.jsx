@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import Spinner from './Spinner';
 
@@ -41,6 +41,7 @@ function HomeSlider() {
         fetchListings();
     }, []);
     if (loading) return <Spinner />;
+    if (listings.length === 0) return <></>;
     return listings ? (
         <>
             <p className="exploreHeading">Recommended</p>

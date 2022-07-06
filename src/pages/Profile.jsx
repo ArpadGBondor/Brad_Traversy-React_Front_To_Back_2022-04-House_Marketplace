@@ -76,9 +76,6 @@ function Profile() {
             const selected = listings.find((listing) => listing.id === listingId);
             const imagesToDelete = selected.data.imgUrls;
 
-            console.log(selected);
-            console.log(imagesToDelete);
-
             imagesToDelete.forEach((urlToDelete) => {
                 let fileName = urlToDelete.split('/').pop().split('#')[0].split('?')[0];
                 fileName = fileName.replace('%2F', '/');
@@ -87,7 +84,7 @@ function Profile() {
                 deleteObject(imageToDeleteRef)
                     .then(() => {
                         // You can comment this out in production. :)
-                        toast.success(`Image deleted: ${fileName}`);
+                        console.log(`${fileName} deleted.`);
                     })
                     .catch((error) => {
                         toast.error('Failed to delete images');
@@ -100,6 +97,8 @@ function Profile() {
             toast.success('Succesfully deleted listing.');
         }
     };
+
+    const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`);
 
     if (loading) return <Spinner />;
 
@@ -152,7 +151,7 @@ function Profile() {
                     <img src={arrowRightIcon} alt="arrow right" />
                 </Link>
 
-                {!loading & (listings?.length > 0) && (
+                {!loading && listings?.length > 0 && (
                     <>
                         <p className="listingText">Your listings</p>
                         <ul className="listingsList">
@@ -162,6 +161,7 @@ function Profile() {
                                     id={listing.id}
                                     listing={listing.data}
                                     onDelete={() => onDelete(listing.id)}
+                                    onEdit={() => onEdit(listing.id)}
                                 />
                             ))}
                         </ul>

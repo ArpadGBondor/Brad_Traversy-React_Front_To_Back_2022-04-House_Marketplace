@@ -7,6 +7,7 @@ import Category from './pages/Category';
 import Offers from './pages/Offers';
 import Listing from './pages/Listing';
 import CreateListing from './pages/CreateListing';
+import EditListing from './pages/EditListing';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
@@ -28,6 +29,9 @@ function App() {
                     <Route path="/offers" element={<Offers />} />
                     <Route path="/create-listing" element={<PrivateRoute />}>
                         <Route path="/create-listing" element={<CreateListing />} />
+                    </Route>
+                    <Route path="/edit-listing/:listingId" element={<PrivateRoute />}>
+                        <Route path="/edit-listing/:listingId" element={<EditListing />} />
                     </Route>
                     <Route path="/contact/:landlordId" element={<Contact />} />
                     <Route path="/profile" element={<PrivateRoute />}>
