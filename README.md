@@ -9,7 +9,7 @@
 
 ## Deployed
 
--   Not yet. (Will be on Netlify)
+-  [On Netlify](https://gabriels-react-front-to-back-07-house-marketplace.netlify.app/)
 
 ## Used Tools:
 
